@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Social Hub</string>
+    <string name="login_view_title">Login</string>
+    <string name="login_edit_text_email_hint">E-mail</string>
+    <string name="login_edit_text_password_hint">Senha</string>
+    <string name="login_check_box_lembrar">Lembre de mim na próxima</string>
+    <string name="login_button_entrar">Entrar</string>
+    <string name="login_nao_temconta">Não tem conta?</string>
+    <string name="login_criar_conta">Criar conta</string>
+    <string name="login_error_email_obrigatorio">E-mail necessário</string>
+    <string name="login_error_password_obrigatorio">Senha necessária</string>
+    <string name="login_error_usuario_incorreto">Usuário ou senha incorretos</string>
+    <string name="novo_usuario_opcao_osuario_buttom">Quero ajudar uma ONG</string>
+    <string name="novo_usuario_opcao_ong_buttom">Sou ONG, procuro de ajuda</string>
+    <string name="novo_usuario_titulo">Escolha uma opção de perfil</string>
+    <string name="perfil_usuario_titulo">Perfil de usuário</string>
+    <string name="perfil_ong_titulo">Perfil de ONG</string>
+</resources>
