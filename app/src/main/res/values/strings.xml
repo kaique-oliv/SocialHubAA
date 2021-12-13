@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">Social Hub</string>
-    <string name="hub">Hub</string>
-    <string name="social">Social</string>
-    <string name="logo_social_hub">Logo Social Hub</string>
+    <string name="login_view_title">Login</string>
+    <string name="login_edit_text_email_hint">E-mail</string>
+    <string name="login_edit_text_password_hint">Password</string>
+    <string name="login_check_box_lembrar">Remember-me next time</string>
+    <string name="login_button_entrar">Get into</string>
+    <string name="login_nao_temconta">Don\'t have an account?</string>
+    <string name="login_criar_conta">Create account</string>
+    <string name="login_error_email_obrigatorio">E-mail needed</string>
+    <string name="login_error_password_obrigatorio">Password needed</string>
+    <string name="login_error_usuario_incorreto">User or password incorrect</string>
+    <string name="novo_usuario_opcao_osuario_buttom">I would like to help a ONG</string>
+    <string name="novo_usuario_opcao_ong_buttom">We are ONG, looking for help</string>
+    <string name="novo_usuario_titulo">Choose an profile option</string>
+    <string name="perfil_usuario_titulo">User profile</string>
+    <string name="perfil_ong_titulo">ONG profile</string>
 </resources>
