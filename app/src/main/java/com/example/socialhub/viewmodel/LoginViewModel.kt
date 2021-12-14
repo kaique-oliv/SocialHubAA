@@ -11,6 +11,7 @@ import com.example.socialhub.databinding.ActivityLoginBinding
 import com.example.socialhub.view.LoginActivity
 import com.example.socialhub.view.MainActivity
 import com.example.socialhub.view.NovoUsuarioOpcaoContaActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginViewModel: ViewModel() {
 
