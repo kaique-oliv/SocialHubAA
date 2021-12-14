@@ -15,4 +15,6 @@
     <string name="novo_usuario_titulo">Choose an profile option</string>
     <string name="perfil_usuario_titulo">User profile</string>
     <string name="perfil_ong_titulo">ONG profile</string>
+    <string name="social">Social</string>
+    <string name="hub">Hub</string>
 </resources>
