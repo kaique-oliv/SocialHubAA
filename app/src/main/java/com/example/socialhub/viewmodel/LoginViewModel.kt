@@ -29,23 +29,30 @@ class LoginViewModel: ViewModel() {
     private var passwordIsVisible: Boolean = false
     private var email: String = "";
     private var senha: String = "";
+    private var lembrar: Boolean = false;
 
     fun addBinding(viewBinding: ActivityLoginBinding, activity: LoginActivity){
         viewBinding.also { binding = it };
         activity.also { rootActivity = it };
+
+        //Abrir arquivo para gravar dados, ee arquivo não existe ele cria...
+        val arquivo = rootActivity.getSharedPreferences("usuario", MODE_PRIVATE)
+        lembrar = arquivo.getBoolean("lembrar", false)
+        Log.i("social-hub", "Lembrar login: ${lembrar}")
+
         verificaAutenticado();
         setListeners();
     }
 
     private fun setListeners() {
 
-        binding.imgEyeShowPassword.setOnClickListener{
+        binding.imgEyeShowPassword.setOnClickListener {
             if (!passwordIsVisible) {
                 binding.imgEyeShowPassword.setImageResource(R.drawable.ic_eye_close_24)
                 binding.loginEditTextPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
                 passwordIsVisible = true
             }
-            else{
+            else {
                 binding.imgEyeShowPassword.setImageResource(R.drawable.ic_eye_24)
                 binding.loginEditTextPassword.transformationMethod = PasswordTransformationMethod.getInstance();
                 passwordIsVisible = false
@@ -73,6 +80,19 @@ class LoginViewModel: ViewModel() {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha)
                     .addOnCompleteListener (OnCompleteListener{
                         if (it.isSuccessful){
+
+                            lembrar = binding.loginCheckBoxLembrar.isChecked
+
+                            //Abrir arquivo para gravar dados, ee arquivo não existe ele cria...
+                            val dados = rootActivity.getSharedPreferences("usuario", MODE_PRIVATE)
+
+                            //Para alerar conteudo do arquivo
+                            val editor = dados.edit()
+                            editor.putString("email", email)
+                            editor.putString("senha", senha)
+                            editor.putBoolean("lembrar", lembrar)
+                            editor.apply()
+
                             Entrar()
                         }
                     })
@@ -100,19 +120,6 @@ class LoginViewModel: ViewModel() {
 
     private fun Entrar() {
 
-        val lembrar = binding.loginCheckBoxLembrar.isChecked
-
-        //Abrir arquivo para gravar dados
-        //Se arquivo não existe ele criar...
-        val dados = rootActivity.getSharedPreferences("usuario", MODE_PRIVATE)
-
-        //Para alerar conteudo do arquivo
-        val editor = dados.edit()
-        editor.putString("email", email)
-        editor.putString("senha", senha)
-        editor.putBoolean("lembrar", lembrar)
-        editor.apply()
-
         val intent = Intent(rootActivity, MainActivity::class.java)
         rootActivity.startActivity(intent)
         rootActivity.finish();
@@ -136,8 +143,7 @@ class LoginViewModel: ViewModel() {
     private fun verificaAutenticado(){
 
         //Ver se escolheu ser lembrado
-        val arquivo = rootActivity.getSharedPreferences("usuario", MODE_PRIVATE)
-        val lembrar = arquivo.getBoolean("lembrar",false)
+
 
         //Se sim, verifica se já está autenticado
         if (lembrar) {

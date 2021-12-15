@@ -19,10 +19,15 @@
         <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/drawable/ic_people_wave_200.xml" value="0.29739583333333336" />
         <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/drawable/person_24.xml" value="0.37083333333333335" />
         <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/layout/activity_nova_ong.xml" value="0.3546875" />
         <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/layout/activity_novo_usuario.xml" value="0.25" />
         <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/layout/activity_novo_usuario_opcao_conta.xml" value="0.31926121372031663" />
         <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/layout/activity_start.xml" value="0.3541666666666667" />
+        <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/layout/common_layout.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/layout/fragment_feed.xml" value="0.25" />
+        <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/layout/fragment_profile.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/m.soares.viterbo/Documents/GitHub/SocialHubAA/app/src/main/res/menu/navigation.xml" value="0.34923076923076923" />
       </map>
     </option>
   </component>
