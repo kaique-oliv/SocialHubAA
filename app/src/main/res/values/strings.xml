@@ -17,4 +17,13 @@
     <string name="perfil_ong_titulo">ONG profile</string>
     <string name="social">Social</string>
     <string name="hub">Hub</string>
+    <string name="criar_conta_mater_logado">Keep me logged in</string>
+    <string name="confirmar_senha_escolhida">Confirm choosen password</string>
+    <string name="obrigatorio_senha_nova">Provide your new passord</string>
+    <string name="obrigatorio_confirmar_senha_nova">Retype your choose neu password</string>
+    <string name="senha_escolhida_divergente_confirmacao">Choosen password doesn\'t match confirmation</string>
+    <string name="criar_usuario_senha_fraca">Password length week</string>
+    <string name="criar_usuario_ja_existe">User already exists with this email</string>
+    <string name="criar_usuario_email_incorreto">Wrong email</string>
+    <string name="autenticar_usuario_nao_existe">User doesn\'t exists</string>
 </resources>

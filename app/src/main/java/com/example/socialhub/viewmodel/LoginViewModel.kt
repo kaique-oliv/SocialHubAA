@@ -1,88 +1,187 @@
 package com.example.socialhub.viewmodel
 
-import android.content.ContextWrapper
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.widget.Toast
-import com.example.socialhub.R
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
+import com.example.socialhub.R
 import com.example.socialhub.databinding.ActivityLoginBinding
+import com.example.socialhub.model.Usuario
 import com.example.socialhub.view.LoginActivity
 import com.example.socialhub.view.MainActivity
 import com.example.socialhub.view.NovoUsuarioOpcaoContaActivity
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.OnFailureListener
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.internal.api.FirebaseNoSignedInUserException
+import java.util.*
 
 class LoginViewModel: ViewModel() {
 
-    lateinit var binding: ActivityLoginBinding
-    lateinit var rootActivity: LoginActivity
+    private lateinit var binding: ActivityLoginBinding
+    private lateinit var rootActivity: LoginActivity
+    private var passwordIsVisible: Boolean = false
+    private var email: String = "";
+    private var senha: String = "";
 
     fun addBinding(viewBinding: ActivityLoginBinding, activity: LoginActivity){
-        binding = viewBinding;
-        rootActivity = activity;
+        viewBinding.also { binding = it };
+        activity.also { rootActivity = it };
+        verificaAutenticado();
         setListeners();
     }
 
     private fun setListeners() {
+
+        binding.imgEyeShowPassword.setOnClickListener{
+            if (!passwordIsVisible) {
+                binding.imgEyeShowPassword.setImageResource(R.drawable.ic_eye_close_24)
+                binding.loginEditTextPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                passwordIsVisible = true
+            }
+            else{
+                binding.imgEyeShowPassword.setImageResource(R.drawable.ic_eye_24)
+                binding.loginEditTextPassword.transformationMethod = PasswordTransformationMethod.getInstance();
+                passwordIsVisible = false
+            }
+        }
+
         binding.loginTextViewCriarConta.setOnClickListener {
             val intent = Intent(rootActivity, NovoUsuarioOpcaoContaActivity::class.java)
             rootActivity.startActivity(intent)
-            //rootActivity.finish();
         }
 
         binding.loginButtonEntrar.setOnClickListener {
             autenticar()
         }
+
     }
 
     private fun autenticar() {
+
         if (validar()) {
-            //Abrir arquivo
-            val dados = rootActivity.getSharedPreferences("usuario", AppCompatActivity.MODE_PRIVATE)
-            val editor = dados.edit()
-
-            val email = dados.getString("email", "")
-            val senha = dados.getString("senha", "")
-
-            if (binding.loginCheckBoxLembrar.isChecked)
-            {
-                editor.putBoolean("lembrar", true)
-            }else{
-                editor.putBoolean("lembrar", false)
-            }
-
-            editor.apply()
-
-            if (email == binding.loginEditTextEmail.text.toString()
-                    .lowercase() && senha == binding.loginEditTextPassword.text.toString()
-                    .lowercase()
-            ) {
-                val intent = Intent(rootActivity, MainActivity::class.java)
-                //startActivity(intent)
-                //finish();
-            } else {
-              Toast.makeText(
-                  rootActivity,
-                  rootActivity.getResources().getString(R.string.login_error_usuario_incorreto),
-                  Toast.LENGTH_SHORT).show()
+            email = binding.loginEditTextEmail.text.toString().lowercase(Locale.getDefault())
+            senha = binding.loginEditTextPassword.text.toString().lowercase(Locale.getDefault())
+            try {
+                //FirebaseApp.initializeApp(rootActivity)
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(email, senha)
+                    .addOnCompleteListener (OnCompleteListener{
+                        if (it.isSuccessful){
+                            Entrar()
+                        }
+                    })
+                    .addOnFailureListener (OnFailureListener {
+                        try {
+                            throw it
+                        } catch (e: FirebaseNoSignedInUserException){
+                            Toast.makeText(
+                                rootActivity,
+                                rootActivity.resources.getString(R.string.criar_usuario_email_incorreto),
+                                Toast.LENGTH_SHORT).show()
+                        } catch (e: Exception){
+                            Toast.makeText(
+                                rootActivity,
+                                "${e.message}",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                    })
+            }catch (e: Exception){
+                Log.i("social-hub", "${e.message}")
             }
         }
+
+    }
+
+    private fun Entrar() {
+
+        val lembrar = binding.loginCheckBoxLembrar.isChecked
+
+        //Abrir arquivo para gravar dados
+        //Se arquivo não existe ele criar...
+        val dados = rootActivity.getSharedPreferences("usuario", MODE_PRIVATE)
+
+        //Para alerar conteudo do arquivo
+        val editor = dados.edit()
+        editor.putString("email", email)
+        editor.putString("senha", senha)
+        editor.putBoolean("lembrar", lembrar)
+        editor.apply()
+
+        val intent = Intent(rootActivity, MainActivity::class.java)
+        rootActivity.startActivity(intent)
+        rootActivity.finish();
+
     }
 
     private fun validar(): Boolean {
+
         if (binding.loginEditTextEmail.text.isNullOrEmpty()) {
-            binding.loginEditTextEmail.error = rootActivity.getResources().getString(R.string.login_error_email_obrigatorio);
+            binding.loginEditTextEmail.error = rootActivity.resources.getString(R.string.login_error_email_obrigatorio);
             return false
         }
         if (binding.loginEditTextPassword.text.isNullOrEmpty()) {
-            binding.loginEditTextEmail.error = rootActivity.getResources().getString(R.string.login_error_password_obrigatorio);
+            binding.loginEditTextEmail.error = rootActivity.resources.getString(R.string.login_error_password_obrigatorio);
             return false
         }
         return true
+
     }
 
-    override fun onCleared() {
-        super.onCleared()
+    private fun verificaAutenticado(){
+
+        //Ver se escolheu ser lembrado
+        val arquivo = rootActivity.getSharedPreferences("usuario", MODE_PRIVATE)
+        val lembrar = arquivo.getBoolean("lembrar",false)
+
+        //Se sim, verifica se já está autenticado
+        if (lembrar) {
+            val usuarioAutenticado = FirebaseAuth.getInstance().currentUser
+
+            if (usuarioAutenticado != null) {
+                Entrar()
+            }
+        }
+
     }
+
+//    private fun sair(){
+//        FirebaseAuth.getInstance().signOut()
+//        //Redireciona para login
+//    }
+
+
+//    fun criarUsuario(){
+//
+//        val uid = FirebaseAuth.getInstance().uid
+//
+//        var usuario = Usuario(
+//            uid.toString(),
+//            "monica",
+//            23,
+//            "werbrt@ter.com",
+//            "base64ImageString")
+//
+//        FirebaseFirestore.getInstance().collection("usuarios")
+//            .add(usuario)
+//            .addOnSuccessListener (OnSuccessListener {
+//                Log.i("social-hub", "${it.id}")
+//            })
+//            .addOnFailureListener(OnFailureListener {
+//                Log.i("social-hub", "${it.message}")
+//            })
+//    }
+
+//    fun updateUsuario(){
+//        FirebaseFirestore.getInstance().collection("usuarios")
+//            .up (usuario)
+//            .addOnSuccessListener (OnSuccessListener {
+//
+//            })
+//    }
 }

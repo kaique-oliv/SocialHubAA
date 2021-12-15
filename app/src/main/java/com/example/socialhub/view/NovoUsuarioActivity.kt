@@ -6,6 +6,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.example.socialhub.databinding.ActivityNovoUsuarioBinding
 import com.example.socialhub.viewmodel.NovoUsuarioViewModel
+import java.lang.NullPointerException
 
 class NovoUsuarioActivity : AppCompatActivity() , LifecycleOwner {
 
@@ -13,11 +14,18 @@ class NovoUsuarioActivity : AppCompatActivity() , LifecycleOwner {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        ///Esconder ActionBar
+        try {
+            this.supportActionBar!!.hide()
+        } catch (e: NullPointerException) {
+        }
+
         binding = ActivityNovoUsuarioBinding.inflate(layoutInflater)
-        var view = binding.root
+        val view = binding.root
         setContentView(view)
 
-        var viewModel = ViewModelProvider(this).get(NovoUsuarioViewModel::class.java)
+        val viewModel = ViewModelProvider(this).get(NovoUsuarioViewModel::class.java)
 
         viewModel.addBinding(binding, this)
     }

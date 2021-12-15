@@ -10,23 +10,33 @@ import com.example.socialhub.view.NovoUsuarioOpcaoContaActivity
 
 class NovoUsuarioOpcaoContaViewModel: ViewModel() {
 
-    lateinit var binding: ActivityNovoUsuarioOpcaoContaBinding
-    lateinit var rootActivity: NovoUsuarioOpcaoContaActivity
+    private lateinit var binding: ActivityNovoUsuarioOpcaoContaBinding
+    private lateinit var rootActivity: NovoUsuarioOpcaoContaActivity
 
     fun addBinding(viewBinding: ActivityNovoUsuarioOpcaoContaBinding, activity: NovoUsuarioOpcaoContaActivity){
-        binding = viewBinding;
-        rootActivity = activity;
+        viewBinding.also { binding = it };
+        activity.also { rootActivity = it };
         setListeners();
     }
 
     private fun setListeners() {
         binding.btnOpcaoNovaOng.setOnClickListener {
-            val intent = Intent(rootActivity, NovaOngActivity::class.java)
-            rootActivity.startActivity(intent)
+            val intent = Intent(
+                rootActivity,
+                NovaOngActivity::class.java
+            )
+            with(rootActivity) {
+                startActivity(intent)
+            }
         }
         binding.btnOpcaoNovoUsuario.setOnClickListener {
-            val intent = Intent(rootActivity, NovoUsuarioActivity::class.java)
-            rootActivity.startActivity(intent)
+            val intent = Intent(
+                rootActivity,
+                NovoUsuarioActivity::class.java
+            )
+            with(rootActivity) {
+                startActivity(intent)
+            }
         }
     }
 }

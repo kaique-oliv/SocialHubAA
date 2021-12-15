@@ -8,6 +8,7 @@ import com.example.socialhub.databinding.ActivityLoginBinding
 import com.example.socialhub.databinding.ActivityNovoUsuarioOpcaoContaBinding
 import com.example.socialhub.viewmodel.LoginViewModel
 import com.example.socialhub.viewmodel.NovoUsuarioOpcaoContaViewModel
+import java.lang.NullPointerException
 
 class NovoUsuarioOpcaoContaActivity : AppCompatActivity() {
 
@@ -15,6 +16,13 @@ class NovoUsuarioOpcaoContaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        ///Esconder ActionBar
+        try {
+            this.supportActionBar!!.hide()
+        } catch (e: NullPointerException) {
+        }
+
         binding = ActivityNovoUsuarioOpcaoContaBinding.inflate(layoutInflater)
         var view = binding.root
         setContentView(view)

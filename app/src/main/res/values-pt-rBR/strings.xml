@@ -18,4 +18,13 @@
     <string name="perfil_ong_titulo">Perfil de ONG</string>
     <string name="social">Social</string>
     <string name="hub">Hub</string>
+    <string name="criar_conta_mater_logado">Mantenha me logado</string>
+    <string name="confirmar_senha_escolhida">Confirmar senha escolhida</string>
+    <string name="obrigatorio_senha_nova">Informe sua nova senha</string>
+    <string name="obrigatorio_confirmar_senha_nova">Redigite a senha que escolheu</string>
+    <string name="senha_escolhida_divergente_confirmacao">Senha escolhida difere da cofirmação</string>
+    <string name="criar_usuario_senha_fraca">Senha muito pequena</string>
+    <string name="criar_usuario_ja_existe">Já existe usuário com este e-mail</string>
+    <string name="criar_usuario_email_incorreto">E-mail incorreto</string>
+    <string name="autenticar_usuario_nao_existe">Usuário não existe</string>
 </resources>

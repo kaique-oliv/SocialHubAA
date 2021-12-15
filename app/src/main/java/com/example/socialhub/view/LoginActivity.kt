@@ -1,16 +1,12 @@
 package com.example.socialhub.view
 
-import android.content.ContextWrapper
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.socialhub.R
 import com.example.socialhub.databinding.ActivityLoginBinding
 import com.example.socialhub.viewmodel.LoginViewModel
+import java.lang.NullPointerException
 
 class LoginActivity : AppCompatActivity(), LifecycleOwner {
 
@@ -18,6 +14,13 @@ class LoginActivity : AppCompatActivity(), LifecycleOwner {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        ///Esconder ActionBar
+        try {
+            this.supportActionBar!!.hide()
+        } catch (e: NullPointerException) {
+        }
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         var view = binding.root
         setContentView(view)
@@ -25,6 +28,5 @@ class LoginActivity : AppCompatActivity(), LifecycleOwner {
         var viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         viewModel.addBinding(binding, this)
-
     }
 }

@@ -27,34 +27,58 @@
 
         <TextView
             android:id="@+id/login_view_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login_view_title"
-            android:textSize="48sp"
-            android:textStyle="bold"
             android:layout_marginBottom="48dp"
-            android:textColor="@color/people_700"/>
+            android:gravity="fill_horizontal"
+            android:text="@string/login_view_title"
+            android:textAlignment="center"
+            android:textColor="@color/ong_500"
+            android:textSize="48sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/login_edit_text_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/login_edit_text_email_hint"
             android:layout_marginBottom="24dp"
             android:drawableStart="@drawable/email_24"
             android:drawablePadding="16dp"
-            android:drawableTint="@color/people_200"/>
+            android:drawableTint="@color/ong_500"
+            android:hint="@string/login_edit_text_email_hint" />
 
-        <EditText
-            android:id="@+id/login_edit_text_password"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/lock_24"
-            android:drawablePadding="16dp"
-            android:drawableTint="@color/people_200"
-            android:hint="@string/login_edit_text_password_hint"
-            android:password="true" />
+            android:orientation="horizontal">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/img_eye_show_password"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/cardview_shadow_end_color"
+                    android:src="@drawable/ic_eye_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/login_edit_text_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/lock_24"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/ong_500"
+                    android:hint="@string/login_edit_text_password_hint"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toStartOf="@+id/img_eye_show_password"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
         <CheckBox
             android:id="@+id/login_check_box_lembrar"
             android:layout_width="wrap_content"
