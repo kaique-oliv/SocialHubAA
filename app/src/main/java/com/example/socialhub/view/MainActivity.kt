@@ -2,17 +2,23 @@ package com.example.socialhub.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.example.socialhub.R
 import com.example.socialhub.databinding.ActivityLoginBinding
 import com.example.socialhub.databinding.ActivityMainBinding
+import com.example.socialhub.fragments.FeedFragment
+import com.example.socialhub.fragments.ProfileFragment
 import com.example.socialhub.viewmodel.LoginViewModel
 import com.example.socialhub.viewmodel.MainViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.lang.NullPointerException
 
 class MainActivity : AppCompatActivity(), LifecycleOwner {
+
+    private val feedFragment = FeedFragment()
+    private val profileFragment = ProfileFragment()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -32,29 +38,25 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
         var viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         viewModel.addBinding(binding, this)
+
+        replaceFragment(feedFragment)
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.navigation_profile -> replaceFragment(profileFragment)
+                R.id.navigation_feed -> replaceFragment(feedFragment)
+            }
+            true
+        }
     }
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
-        when (menuItem.itemId) {
-            R.id.navigation_blog -> {
-                val fragment = FeedFragment()
-                supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.simpleName)
-                    .commit()
-                return@OnNavigationItemSelectedListener true
-            }
-//            R.id.navigation_chapter -> {
-//                val fragment = ChapterFragment()
-//                supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
-//                    .commit()
-//                return@OnNavigationItemSelectedListener true
-//            }
-//            R.id.navigation_store -> {
-//                val fragment = StoreFragment()
-//                supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
-//                    .commit()
-//                return@OnNavigationItemSelectedListener true
-//            }
+    private fun replaceFragment(fragment: Fragment){
+        if (fragment != null){
+            val fragmentManager = supportFragmentManager
+            val fragmentTrasaction = fragmentManager.beginTransaction()
+            fragmentTrasaction.replace(R.id.fragmentContainer, fragment)
+            fragmentTrasaction.commit()
         }
-        false
+
     }
 }
