@@ -12,7 +12,7 @@
         android:layout_height="100dp"
         android:rotation="180"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/ic_people_wave_500"
+        app:srcCompat="@drawable/ic_ong_wave_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/perfil_ong_titulo"
-        android:textColor="@color/people_700"
+        android:textColor="@color/ong_500"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,14 +41,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_opcao_usuario_title"
-        ></LinearLayout>
+        >
+
+
+        <TextView
+            android:id="@+id/register_edit_text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="24dp"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/people_700"
+            android:hint="Nome" />
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/novo_usuario_iv_bottom"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/ic_people_wave_500"
+        app:srcCompat="@drawable/ic_ong_wave_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
