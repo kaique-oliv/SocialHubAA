@@ -4,26 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.NovaOngActivity">
+    tools:context=".view.NovaOngActivity" >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+    <ImageView
+        android:id="@+id/novo_usuario_iv_top"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:rotation="180"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_people_wave_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_opcao_usuario_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/perfil_ong_titulo"
+        android:textColor="@color/people_700"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/novo_usuario_iv_top" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_ong_account_registration"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/novo_usuario_iv_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_opcao_usuario_title"
+        ></LinearLayout>
+
+    <ImageView
+        android:id="@+id/novo_usuario_iv_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_people_wave_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        />
 
-        <TextView
-            android:id="@+id/tv_opcao_usuario_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/perfil_ong_titulo"
-            android:textColor="@color/people_700"
-            android:textSize="48sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
