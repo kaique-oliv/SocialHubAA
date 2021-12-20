@@ -9,16 +9,12 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.example.socialhub.R
 import com.example.socialhub.databinding.ActivityLoginBinding
-import com.example.socialhub.model.Usuario
 import com.example.socialhub.view.LoginActivity
 import com.example.socialhub.view.MainActivity
 import com.example.socialhub.view.NovoUsuarioOpcaoContaActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.internal.api.FirebaseNoSignedInUserException
 import java.util.*
 
@@ -37,8 +33,6 @@ class LoginViewModel: ViewModel() {
 
         //Abrir arquivo para gravar dados, ee arquivo não existe ele cria...
         val arquivo = rootActivity.getSharedPreferences("usuario", MODE_PRIVATE)
-        lembrar = arquivo.getBoolean("lembrar", false)
-        Log.i("social-hub", "Lembrar login: ${lembrar}")
 
         verificaAutenticado();
         setListeners();
@@ -93,7 +87,7 @@ class LoginViewModel: ViewModel() {
                             editor.putBoolean("lembrar", lembrar)
                             editor.apply()
 
-                            Entrar()
+                            entrar()
                         }
                     })
                     .addOnFailureListener (OnFailureListener {
@@ -118,7 +112,7 @@ class LoginViewModel: ViewModel() {
 
     }
 
-    private fun Entrar() {
+    private fun entrar() {
 
         val intent = Intent(rootActivity, MainActivity::class.java)
         rootActivity.startActivity(intent)
@@ -137,29 +131,19 @@ class LoginViewModel: ViewModel() {
             return false
         }
         return true
-
+        
     }
 
     private fun verificaAutenticado(){
-
-        //Ver se escolheu ser lembrado
-
-
-        //Se sim, verifica se já está autenticado
         if (lembrar) {
             val usuarioAutenticado = FirebaseAuth.getInstance().currentUser
 
             if (usuarioAutenticado != null) {
-                Entrar()
+                entrar()
             }
         }
-
     }
 
-//    private fun sair(){
-//        FirebaseAuth.getInstance().signOut()
-//        //Redireciona para login
-//    }
 
 
 //    fun criarUsuario(){

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id='@+id/navigation_blog'
-        android:icon='@drawable/ic_launcher_foreground'
-        android:title='Blogs'/>
+        android:id='@+id/navigation_feed'
+        android:icon="@drawable/ic_baseline_receipt_long_24"
+        android:title="Feed" />
     <item
-        android:id='@+id/navigation_chapter'
-        android:icon='@drawable/ic_launcher_foreground'
-        android:title='Chapters'/>
-    <item
-        android:id='@+id/navigation_store'
-        android:icon='@drawable/ic_launcher_foreground'
-        android:title='Android Store'/>
+        android:id='@+id/navigation_profile'
+        android:icon="@drawable/ic_account_circle_24"
+        android:title="Profile" />
+<!--    <item-->
+<!--        android:id='@+id/navigation_store'-->
+<!--        android:icon='@drawable/ic_launcher_foreground'-->
+<!--        android:title='Android Store'/>-->
 </menu>
