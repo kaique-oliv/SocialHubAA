@@ -27,4 +27,22 @@
     <string name="criar_usuario_ja_existe">Já existe usuário com este e-mail</string>
     <string name="criar_usuario_email_incorreto">E-mail incorreto</string>
     <string name="autenticar_usuario_nao_existe">Usuário não existe</string>
+
+    <!-- Texto da tela de cadastro ong -->
+    <string name="ong_profile_edit_text_organization_hint">Organização</string>
+    <string name="ong_profile_edit_text_organization_name_hint">Nome da Organização</string>
+    <string name="ong_profile_edit_text_cnpj_hint">CNPJ</string>
+    <string name="ong_profile_edit_text_checkbox_does_not_have_cnpj">Não Tenho</string>
+    <string name="ong_profile_edit_text_email_hint">E-mail</string>
+    <string name="ong_profile_edit_text_phone_number_hint">Número de Telefone</string>
+    <string name="ong_profile_edit_text_address_hint">Endereço</string>
+    <string name="ong_profile_edit_text_cep_hint">CEP</string>
+    <string name="ong_profile_edit_text_public_place_hint">Logradouro</string>
+    <string name="ong_profile_edit_text_number_hint">Número</string>
+    <string name="ong_profile_edit_text_complement_hint">Complemento</string>
+    <string name="ong_profile_edit_text_district_hint">Bairro</string>
+
+    <string name="ong_profile_edit_text_sector_hint">Setor</string>
+
+
 </resources>
