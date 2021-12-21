@@ -131,7 +131,6 @@ class LoginViewModel: ViewModel() {
             return false
         }
         return true
-        
     }
 
     private fun verificaAutenticado(){
