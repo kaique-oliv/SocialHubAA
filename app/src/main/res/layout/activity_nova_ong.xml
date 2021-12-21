@@ -42,8 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_opcao_usuario_title"
         >
-
-
         <TextView
             android:id="@+id/register_edit_text_name"
             android:layout_width="match_parent"
@@ -52,7 +50,57 @@
             android:layout_marginBottom="24dp"
             android:drawablePadding="16dp"
             android:drawableTint="@color/people_700"
-            android:hint="Nome" />
+            android:hint="Nome Completo"
+            android:drawableStart="@drawable/person_24"
+            />
+
+        <TextView
+            android:id="@+id/register_edit_text_endereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="24dp"
+            android:drawableStart="@drawable/ic_place_24"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/people_700"
+            android:hint="Endereço" />
+
+        <TextView
+            android:id="@+id/register_edit_text_telefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="24dp"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/people_700"
+            android:hint="Telefone"
+            android:drawableStart="@drawable/outline_call_24"
+            />
+
+        <TextView
+            android:id="@+id/register_edit_text_setor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="24dp"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/people_700"
+            android:hint="Setor"
+            />
+
+
+        <TextView
+            android:id="@+id/register_edit_text_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="24dp"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/people_700"
+            android:hint="E-mail"
+            android:drawableStart="@drawable/email_24"
+            />
+
 
     </LinearLayout>
 
