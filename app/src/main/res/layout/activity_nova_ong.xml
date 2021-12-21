@@ -31,6 +31,23 @@
         app:layout_constraintTop_toBottomOf="@+id/novo_usuario_iv_top" />
 
     <LinearLayout
+        android:id="@+id/linear_layout_ong_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tv_opcao_usuario_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/linear_layout_ong_account_registration"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -38,22 +55,82 @@
         android:paddingStart="32dp"
         android:paddingEnd="32dp"
         app:layout_constraintBottom_toTopOf="@+id/novo_usuario_iv_bottom"
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout_ong_avatar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_opcao_usuario_title"
+        app:layout_constraintVertical_bias="0.0"
         >
 
-
-        <TextView
-            android:id="@+id/register_edit_text_name"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:layout_marginBottom="24dp"
-            android:drawablePadding="16dp"
-            android:drawableTint="@color/people_700"
-            android:hint="Nome" />
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="164dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/register_edit_text_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/person_24"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/ong_500"
+                    android:hint="Nome Completo"
+                    tools:layout_editor_absoluteX="32dp"
+                    tools:layout_editor_absoluteY="88dp" />
+
+                <EditText
+                    android:id="@+id/register_edit_text_endereco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_place_24"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/ong_500"
+                    android:hint="Endereço" />
+
+                <EditText
+                    android:id="@+id/register_edit_text_telefone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/outline_call_24"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/ong_500"
+                    android:hint="Telefone" />
+
+                <EditText
+                    android:id="@+id/register_edit_text_setor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/ong_500"
+                    android:hint="Setor" />
+
+                <EditText
+                    android:id="@+id/register_edit_text_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/email_24"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/ong_500"
+                    android:hint="E-mail" />
+
+                <Button
+                    android:id="@+id/criar_conta_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/ong_500"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="@string/login_criar_conta" />
+
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
     <ImageView
