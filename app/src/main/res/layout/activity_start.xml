@@ -4,57 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".view.StartActivity">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/content_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/grey_200">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.214">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ly_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/contentLayout"
+            app:layout_constraintStart_toStartOf="@+id/contentLayout"
+            app:layout_constraintTop_toTopOf="@+id/contentLayout">
 
             <ImageView
-                android:id="@+id/iv_logo_app_start"
-                android:layout_width="239dp"
-                android:layout_height="237dp"
-                android:adjustViewBounds="true"
-                app:srcCompat="@drawable/ic_logo_svg_cpr" />
-            <LinearLayout
-                android:id="@+id/titulo"
+                android:id="@+id/iv_logo_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/avd_logo_start" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linearLayoutCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foregroundGravity="center"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_below="@id/iv_logo_app_start">
+                android:padding="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_logo_start"
+                app:layout_constraintEnd_toEndOf="@+id/iv_logo_start"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/iv_logo_start"
+                app:layout_constraintVertical_bias="0.702"
+                tools:ignore="MissingConstraints">
+
                 <TextView
-                    android:id="@+id/Titulo_Social"
+                    android:id="@+id/tv_Tituli_Social"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="5dp"
-
+                    android:padding="2dp"
                     android:text="@string/social"
                     android:textColor="@color/ong_500"
                     android:textSize="48sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/titulo_hub"
+                    android:id="@+id/tv_Titulo_Hub"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="5dp"
+                    android:padding="2dp"
+
                     android:text="@string/hub"
                     android:textColor="@color/people_500"
                     android:textSize="48sp"
                     android:textStyle="bold" />
 
-            </LinearLayout>
 
-        </RelativeLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
