@@ -41,8 +41,9 @@
     <string name="ong_profile_edit_text_number_hint">Número</string>
     <string name="ong_profile_edit_text_complement_hint">Complemento</string>
     <string name="ong_profile_edit_text_district_hint">Bairro</string>
-
+    <string name="img_ong_wave_500_top">img_ong_wave_500_top</string>
     <string name="ong_profile_edit_text_sector_hint">Setor</string>
+
 
 
 </resources>

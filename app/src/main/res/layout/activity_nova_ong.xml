@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.NovaOngActivity" >
@@ -10,209 +10,152 @@
         android:id="@+id/novo_usuario_iv_top"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:contentDescription="@string/img_ong_wave_500_top"
         android:rotation="180"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/ic_ong_wave_500"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:srcCompat="@drawable/ic_ong_wave_500" />
 
     <TextView
         android:id="@+id/tv_opcao_usuario_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/novo_usuario_iv_top"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
         android:text="@string/perfil_ong_titulo"
         android:textColor="@color/ong_500"
         android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/novo_usuario_iv_top" />
+        android:textStyle="bold" />
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linear_layout_ong_account_registration"
+    <ScrollView
+        android:id="@+id/scroll_ong_account_registration"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:paddingStart="32dp"
-        android:paddingEnd="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/novo_usuario_iv_bottom"
-        app:layout_constraintTop_toBottomOf="@+id/tv_opcao_usuario_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_opcao_usuario_title"
         >
 
-        <ScrollView
+        <LinearLayout
+            android:id="@+id/linear_layout_ong_account_registration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fillViewport="true"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="16dp">
+            android:orientation="vertical" >
 
-            <LinearLayout
-                android:id="@+id/linear_layout_ong_account_registration_organization"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/ong_profile_edit_text_organization_hint"
+                android:textColor="@color/ong_500"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/register_edit_text_organization_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:drawableStart="@drawable/person_24"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_organization_name_hint"
+                />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/ong_profile_edit_text_organization_hint"
-                    android:textColor="@color/ong_500"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/register_edit_text_organization_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/person_24"
-                    android:drawablePadding="16dp"
-                    android:drawableTint="@color/ong_500"
-                    android:hint="@string/ong_profile_edit_text_organization_name_hint"
-                    tools:layout_editor_absoluteX="32dp"
-                    tools:layout_editor_absoluteY="88dp" />
-
-                <EditText
-                    android:id="@+id/register_edit_text_cnpj"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/person_24"
-                    android:drawablePadding="16dp"
-                    android:drawableTint="@color/ong_500"
-                    android:hint="@string/ong_profile_edit_text_cnpj_hint"
-                    tools:layout_editor_absoluteX="32dp"
-                    tools:layout_editor_absoluteY="88dp" />
-
-                <CheckBox
-                    android:id="@+id/register_checkbox_does_not_have_cnpj"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/ong_profile_edit_text_checkbox_does_not_have_cnpj" />
-
-                <EditText
-                    android:id="@+id/register_edit_text_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/email_24"
-                    android:drawablePadding="16dp"
-                    android:drawableTint="@color/ong_500"
-                    android:hint="@string/ong_profile_edit_text_email_hint" />
-
-                <EditText
-                    android:id="@+id/register_edit_text_phone_number"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/outline_call_24"
-                    android:drawablePadding="16dp"
-                    android:drawableTint="@color/ong_500"
-                    android:hint="@string/ong_profile_edit_text_phone_number_hint" />
+            <EditText
+                android:id="@+id/register_edit_text_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/email_24"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_email_hint" />
 
 
-                <LinearLayout
-                    android:id="@+id/linear_layout_ong_account_registration_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+            <EditText
+                android:id="@+id/register_edit_text_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/outline_call_24"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_phone_number_hint" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/ong_profile_edit_text_address_hint"
-                        android:textColor="@color/ong_500"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+            <EditText
+                android:id="@+id/register_edit_text_sector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_sector_hint" />
 
-                    <EditText
-                        android:id="@+id/register_edit_text_cep"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_place_24"
-                        android:drawablePadding="16dp"
-                        android:drawableTint="@color/ong_500"
-                        android:hint="@string/ong_profile_edit_text_cep_hint" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/ong_profile_edit_text_address_hint"
+                android:textColor="@color/ong_500"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/register_edit_text_public_place"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_place_24"
-                        android:drawablePadding="16dp"
-                        android:drawableTint="@color/ong_500"
-                        android:hint="@string/ong_profile_edit_text_public_place_hint" />
+            <EditText
+                android:id="@+id/register_edit_text_cep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_place_24"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_cep_hint" />
 
-                    <EditText
-                        android:id="@+id/register_edit_text_number"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_place_24"
-                        android:drawablePadding="16dp"
-                        android:drawableTint="@color/ong_500"
-                        android:hint="@string/ong_profile_edit_text_number_hint" />
+            <EditText
+                android:id="@+id/register_edit_text_public_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_place_24"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_public_place_hint" />
 
-                    <EditText
-                        android:id="@+id/register_edit_complement"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_place_24"
-                        android:drawablePadding="16dp"
-                        android:drawableTint="@color/ong_500"
-                        android:hint="@string/ong_profile_edit_text_complement_hint" />
+            <EditText
+                android:id="@+id/register_edit_text_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_place_24"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_number_hint" />
 
-                    <EditText
-                        android:id="@+id/register_edit_text_district"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_place_24"
-                        android:drawablePadding="16dp"
-                        android:drawableTint="@color/ong_500"
-                        android:hint="@string/ong_profile_edit_text_district_hint" />
+            <EditText
+                android:id="@+id/register_edit_complement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_place_24"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_complement_hint" />
 
-                    <EditText
-                        android:id="@+id/register_edit_text_sector"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="16dp"
-                        android:drawableTint="@color/ong_500"
-                        android:hint="@string/ong_profile_edit_text_sector_hint" />
+            <EditText
+                android:id="@+id/register_edit_text_district"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_place_24"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_district_hint" />
 
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/criar_conta_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:backgroundTint="@color/ong_500"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
-                    android:text="@string/login_criar_conta" />
-
-            </LinearLayout>
-        </ScrollView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/novo_usuario_iv_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/ic_ong_wave_500"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+            <Button
+                android:id="@+id/criar_conta_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/ong_500"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/login_criar_conta" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
