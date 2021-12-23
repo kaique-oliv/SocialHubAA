@@ -102,7 +102,7 @@ class NovaOngViewModel: ViewModel() {
             }
         })
 
-        binding.registerEditTextCnpj.addTextChangedListener(object: TextWatcher {
+        binding.registerEditTextCpf.addTextChangedListener(object: TextWatcher {
             var isUpdating: Boolean = false
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 var s = 2
@@ -111,7 +111,7 @@ class NovaOngViewModel: ViewModel() {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 val str = unmask(s.toString())
                 var mascara = ""
-                var mask = "##.###.###/####-##"
+                var mask = "###.###.###-##"
 
                 if (isUpdating) {
                     isUpdating = false
@@ -133,17 +133,17 @@ class NovaOngViewModel: ViewModel() {
                 }
 
                 isUpdating = true
-                binding.registerEditTextCnpj.setText(mascara)
-                binding.registerEditTextCnpj.setSelection(mascara.length)
+                binding.registerEditTextCpf.setText(mascara)
+                binding.registerEditTextCpf.setSelection(mascara.length)
 
                 if (str.length >= 14) {
                     if (checkCpf(str))
-                        binding.registerEditTextCnpj.setTextColor(rootActivity.resources.getColor(R.color.green))
+                        binding.registerEditTextCpf.setTextColor(rootActivity.resources.getColor(R.color.green))
                     else
-                        binding.registerEditTextCnpj.setTextColor(rootActivity.resources.getColor(R.color.red))
+                        binding.registerEditTextCpf.setTextColor(rootActivity.resources.getColor(R.color.red))
                 }
                 else {
-                    binding.registerEditTextCnpj.setTextColor(rootActivity.resources.getColor(R.color.black))
+                    binding.registerEditTextCpf.setTextColor(rootActivity.resources.getColor(R.color.black))
                 }
             }
 

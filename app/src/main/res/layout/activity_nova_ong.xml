@@ -174,12 +174,12 @@
                 android:hint="@string/ong_profile_edit_text_name_hint" />
 
             <EditText
-                android:id="@+id/register_edit_text_cnpj"
+                android:id="@+id/register_edit_text_cpf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
-                android:hint="@string/ong_profile_edit_text_cnpj_hint"
+                android:hint="@string/ong_profile_edit_text_cpf_hint"
                 android:inputType="number" />
 
             <EditText
