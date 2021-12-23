@@ -94,7 +94,7 @@
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/people_700"
                 android:hint="@string/confirmar_senha_escolhida"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword" />
 
             <ImageButton
                 android:id="@+id/img_eye_show_confirm_password"

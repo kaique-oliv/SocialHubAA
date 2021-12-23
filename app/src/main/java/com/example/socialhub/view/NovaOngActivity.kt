@@ -1,19 +1,31 @@
 package com.example.socialhub.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.socialhub.R
-import com.example.socialhub.databinding.ActivityLoginBinding
-import com.example.socialhub.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.ViewModelProvider
 import com.example.socialhub.databinding.ActivityNovaOngBinding
+import com.example.socialhub.viewmodel.NovaOngViewModel
 
-class NovaOngActivity : AppCompatActivity() {
+class NovaOngActivity : AppCompatActivity(), LifecycleOwner {
+
     private lateinit var binding: ActivityNovaOngBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        ///Esconder ActionBar
+        try {
+            this.supportActionBar!!.hide()
+        } catch (e: NullPointerException) {
+        }
+
         binding = ActivityNovaOngBinding.inflate(layoutInflater)
-        var view = binding.root
+        val view = binding.root
         setContentView(view)
+
+        val viewModel = ViewModelProvider(this).get(NovaOngViewModel::class.java)
+
+        viewModel.addBinding(binding, this)
     }
 }

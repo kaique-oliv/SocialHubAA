@@ -174,12 +174,12 @@
                 android:hint="@string/ong_profile_edit_text_name_hint" />
 
             <EditText
-                android:id="@+id/register_edit_text_cpf"
+                android:id="@+id/register_edit_text_cnpj"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
-                android:hint="@string/ong_profile_edit_text_cpf_hint"
+                android:hint="@string/ong_profile_edit_text_cnpj_hint"
                 android:inputType="number" />
 
             <EditText
@@ -206,26 +206,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/imageView_password"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="6dp"
-                    android:layout_alignEnd="@+id/register_edit_text_password"
-                    android:contentDescription="@string/ong_profile_img_eye_password"
-                    app:srcCompat="@drawable/ic_eye_24"
-                    />
-
                 <EditText
-                    android:id="@+id/register_edit_text_password"
+                    android:id="@+id/login_edit_text_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
                     android:drawablePadding="16dp"
                     android:drawableTint="@color/ong_500"
-                    android:inputType="textPassword"
-                    android:hint="@string/ong_profile_edit_text_password_hint" />
+                    android:hint="@string/ong_profile_edit_text_password_hint"
+                    android:inputType="textPassword" />
+
+                <ImageButton
+                    android:id="@+id/img_eye_show_new_password"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentTop="true"
+                    android:background="#00FFFFFF"
+                    android:layout_alignEnd="@+id/login_edit_text_password"
+                    app:srcCompat="@drawable/ic_eye_24"
+                    />
 
             </RelativeLayout>
 
@@ -235,23 +237,21 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/register_edit_text_repeat_password"
+                    android:id="@+id/login_edit_text_password_confirm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="16dp"
                     android:drawableTint="@color/ong_500"
-                    android:inputType="textPassword"
-                    android:hint="@string/ong_profile_edit_text_repeat_password_hint" />
+                    android:hint="@string/ong_profile_edit_text_repeat_password_hint"
+                    android:inputType="textPassword" />
 
-                <ImageView
-                    android:id="@+id/imageView_repeat_password"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                <ImageButton
+                    android:id="@+id/img_eye_show_confirm_password"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginEnd="6dp"
-                    android:layout_alignEnd="@+id/register_edit_text_repeat_password"
-                    android:contentDescription="@string/ong_profile_img_eye_password"
+                    android:background="#00FFFFFF"
+                    android:layout_alignEnd="@+id/login_edit_text_password_confirm"
                     app:srcCompat="@drawable/ic_eye_24" />
 
             </RelativeLayout>

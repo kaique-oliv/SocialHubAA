@@ -47,6 +47,7 @@
     <string name="ong_profile_text_view_safety_hint">Segurança</string>
     <string name="ong_profile_edit_text_name_hint">Nome</string>
     <string name="ong_profile_edit_text_cpf_hint">CPF</string>
+    <string name="ong_profile_edit_text_cnpj_hint">CNPJ</string>
     <string name="ong_profile_edit_text_password_hint">Password</string>
     <string name="ong_profile_edit_text_repeat_password_hint">Repeat Password</string>
     <string name="ong_profile_text_view_accept_message_hint">

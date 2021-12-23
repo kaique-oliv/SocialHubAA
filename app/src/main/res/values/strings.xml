@@ -47,6 +47,7 @@
     <string name="ong_profile_text_view_safety_hint">Safety</string>
     <string name="ong_profile_edit_text_name_hint">Name</string>
     <string name="ong_profile_edit_text_cpf_hint">CPF</string>
+    <string name="ong_profile_edit_text_cnpj_hint">CNPJ</string>
     <string name="ong_profile_edit_text_password_hint">Password</string>
     <string name="ong_profile_edit_text_repeat_password_hint">Repeat Password</string>
     <string name="ong_profile_text_view_accept_message_hint">
@@ -54,5 +55,5 @@ By creating an account you agree to Social Hub\'s terms of use and privacy polic
     <string name="ong_profile_img_eye_password">Eye Password</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 </resources>

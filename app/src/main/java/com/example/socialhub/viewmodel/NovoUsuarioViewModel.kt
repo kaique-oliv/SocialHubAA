@@ -7,6 +7,7 @@ import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
+import com.example.socialhub.R
 import com.example.socialhub.databinding.ActivityNovoUsuarioBinding
 import com.example.socialhub.view.MainActivity
 import com.example.socialhub.view.NovoUsuarioActivity
@@ -33,26 +34,27 @@ class NovoUsuarioViewModel: ViewModel() {
     }
 
     private fun setListeners() {
+
         binding.imgEyeShowNewPassword.setOnClickListener{
             if (!newPasswordIsVisible) {
-                binding.imgEyeShowNewPassword.setImageResource(com.example.socialhub.R.drawable.ic_eye_close_24)
+                binding.imgEyeShowNewPassword.setImageResource(R.drawable.ic_eye_close_24)
                 binding.loginEditTextPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
                 newPasswordIsVisible = true
             }
             else{
-                binding.imgEyeShowNewPassword.setImageResource(com.example.socialhub.R.drawable.ic_eye_24)
+                binding.imgEyeShowNewPassword.setImageResource(R.drawable.ic_eye_24)
                 binding.loginEditTextPassword.transformationMethod = PasswordTransformationMethod.getInstance();
                 newPasswordIsVisible = false
             }
         }
         binding.imgEyeShowConfirmPassword.setOnClickListener{
             if (!confirPasswordIsVisible) {
-                binding.imgEyeShowConfirmPassword.setImageResource(com.example.socialhub.R.drawable.ic_eye_close_24)
+                binding.imgEyeShowConfirmPassword.setImageResource(R.drawable.ic_eye_close_24)
                 binding.loginEditTextPasswordConfirm.transformationMethod = HideReturnsTransformationMethod.getInstance()
                 confirPasswordIsVisible = true
             }
             else{
-                binding.imgEyeShowConfirmPassword.setImageResource(com.example.socialhub.R.drawable.ic_eye_24)
+                binding.imgEyeShowConfirmPassword.setImageResource(R.drawable.ic_eye_24)
                 binding.loginEditTextPasswordConfirm.transformationMethod = PasswordTransformationMethod.getInstance();
                 confirPasswordIsVisible = false
             }
@@ -122,21 +124,21 @@ class NovoUsuarioViewModel: ViewModel() {
 
     private fun validar(): Boolean {
         if (binding.loginEditTextEmail.text.isNullOrEmpty()) {
-            binding.loginEditTextEmail.error = rootActivity.resources.getString(com.example.socialhub.R.string.login_error_email_obrigatorio);
+            binding.loginEditTextEmail.error = rootActivity.resources.getString(R.string.login_error_email_obrigatorio);
             return false
         }
         if (binding.loginEditTextPassword.text.isNullOrEmpty()) {
-            binding.loginEditTextEmail.error = rootActivity.resources.getString(com.example.socialhub.R.string.obrigatorio_senha_nova);
+            binding.loginEditTextEmail.error = rootActivity.resources.getString(R.string.obrigatorio_senha_nova);
             return false
         }
         if (binding.loginEditTextPasswordConfirm.text.isNullOrEmpty()) {
-            binding.loginEditTextEmail.error = rootActivity.resources.getString(com.example.socialhub.R.string.obrigatorio_confirmar_senha_nova);
+            binding.loginEditTextEmail.error = rootActivity.resources.getString(R.string.obrigatorio_confirmar_senha_nova);
             return false
         }
         if (binding.loginEditTextPassword.text.toString() != binding.loginEditTextPasswordConfirm.text.toString()){
             Toast.makeText(
                 rootActivity,
-                rootActivity.resources.getString(com.example.socialhub.R.string.senha_escolhida_divergente_confirmacao),
+                rootActivity.resources.getString(R.string.senha_escolhida_divergente_confirmacao),
                 Toast.LENGTH_SHORT).show()
             return false
         }
