@@ -6,20 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".view.NovaOngActivity" >
 
-    <ImageView
-        android:id="@+id/novo_usuario_iv_top"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:contentDescription="@string/img_ong_wave_500_top"
-        android:rotation="180"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/ic_ong_wave_500" />
-
     <TextView
         android:id="@+id/tv_opcao_usuario_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/novo_usuario_iv_top"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:gravity="center"
@@ -32,21 +22,22 @@
         android:id="@+id/scroll_ong_account_registration"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tv_opcao_usuario_title"
-        >
+        android:layout_below="@+id/tv_opcao_usuario_title">
 
         <LinearLayout
             android:id="@+id/linear_layout_ong_account_registration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:text="@string/ong_profile_edit_text_organization_hint"
+                android:text="@string/ong_profile_text_view_organization_hint"
                 android:textColor="@color/ong_500"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -55,17 +46,14 @@
                 android:id="@+id/register_edit_text_organization_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/person_24"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
-                android:hint="@string/ong_profile_edit_text_organization_name_hint"
-                />
+                android:hint="@string/ong_profile_edit_text_organization_name_hint" />
 
             <EditText
                 android:id="@+id/register_edit_text_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/email_24"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
                 android:hint="@string/ong_profile_edit_text_email_hint" />
@@ -75,7 +63,6 @@
                 android:id="@+id/register_edit_text_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/outline_call_24"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
                 android:hint="@string/ong_profile_edit_text_phone_number_hint" />
@@ -93,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:text="@string/ong_profile_edit_text_address_hint"
+                android:text="@string/ong_profile_text_view_address_hint"
                 android:textColor="@color/ong_500"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -102,7 +89,6 @@
                 android:id="@+id/register_edit_text_cep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_place_24"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
                 android:hint="@string/ong_profile_edit_text_cep_hint" />
@@ -111,7 +97,6 @@
                 android:id="@+id/register_edit_text_public_place"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_place_24"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
                 android:hint="@string/ong_profile_edit_text_public_place_hint" />
@@ -120,7 +105,6 @@
                 android:id="@+id/register_edit_text_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_place_24"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
                 android:hint="@string/ong_profile_edit_text_number_hint" />
@@ -129,7 +113,6 @@
                 android:id="@+id/register_edit_complement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_place_24"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
                 android:hint="@string/ong_profile_edit_text_complement_hint" />
@@ -138,10 +121,96 @@
                 android:id="@+id/register_edit_text_district"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_place_24"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
                 android:hint="@string/ong_profile_edit_text_district_hint" />
+
+            <EditText
+                android:id="@+id/register_edit_text_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_city_hint" />
+
+            <EditText
+                android:id="@+id/register_edit_text_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_state_hint" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/ong_profile_text_view_responsible_hint"
+                android:textColor="@color/ong_500"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/register_edit_text_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_name_hint" />
+
+            <EditText
+                android:id="@+id/register_edit_text_cpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_cpf_hint" />
+
+            <EditText
+                android:id="@+id/register_edit_text_email_responsible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_email_hint" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/ong_profile_text_view_safety_hint"
+                android:textColor="@color/ong_500"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/register_edit_text_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_password_hint" />
+
+            <EditText
+                android:id="@+id/register_edit_text_repeat_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:drawableTint="@color/ong_500"
+                android:hint="@string/ong_profile_edit_text_repeat_password_hint" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"
+                android:text="@string/ong_profile_text_view_accept_message_hint"
+                android:textColor="@color/ong_500"
+                android:textSize="12sp"
+                />
 
             <Button
                 android:id="@+id/criar_conta_button"
@@ -152,6 +221,8 @@
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
                 android:text="@string/login_criar_conta" />
+
+
 
 
         </LinearLayout>

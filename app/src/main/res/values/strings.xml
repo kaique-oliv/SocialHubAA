@@ -29,22 +29,28 @@
 
     <!-- ong registration screen text -->
 
-    <string name="ong_profile_edit_text_organization_hint">Organization</string>
+    <string name="ong_profile_text_view_organization_hint">Organization</string>
     <string name="ong_profile_edit_text_organization_name_hint">Organization Name</string>
-    <string name="ong_profile_edit_text_cnpj_hint">CNPJ</string>
-    <string name="ong_profile_edit_text_checkbox_does_not_have_cnpj">
-I do not have</string>
     <string name="ong_profile_edit_text_email_hint">E-mail</string>
     <string name="ong_profile_edit_text_phone_number_hint">Phone Number</string>
-    <string name="ong_profile_edit_text_address_hint">Address</string>
+    <string name="ong_profile_text_view_address_hint">Address</string>
     <string name="ong_profile_edit_text_cep_hint">CEP</string>
     <string name="ong_profile_edit_text_public_place_hint">Public Place</string>
     <string name="ong_profile_edit_text_number_hint">Number</string>
     <string name="ong_profile_edit_text_complement_hint">Complement</string>
-    <string name="ong_profile_edit_text_district_hint">Public Place</string>
+    <string name="ong_profile_edit_text_district_hint">District</string>
+    <string name="ong_profile_edit_text_city_hint">City</string>
+    <string name="ong_profile_edit_text_state_hint">State</string>
     <string name="img_ong_wave_500_top">img_ong_wave_500_top</string>
     <string name="ong_profile_edit_text_sector_hint">Sector</string>
-
+    <string name="ong_profile_text_view_responsible_hint">Responsible</string>
+    <string name="ong_profile_text_view_safety_hint">Safety</string>
+    <string name="ong_profile_edit_text_name_hint">Name</string>
+    <string name="ong_profile_edit_text_cpf_hint">CPF</string>
+    <string name="ong_profile_edit_text_password_hint">Password</string>
+    <string name="ong_profile_edit_text_repeat_password_hint">Repeat Password</string>
+    <string name="ong_profile_text_view_accept_message_hint">
+By creating an account you agree to Social Hub's terms of use and privacy policy.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

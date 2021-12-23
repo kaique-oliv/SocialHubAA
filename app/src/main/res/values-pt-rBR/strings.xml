@@ -29,20 +29,28 @@
     <string name="autenticar_usuario_nao_existe">Usuário não existe</string>
 
     <!-- Texto da tela de cadastro ong -->
-    <string name="ong_profile_edit_text_organization_hint">Organização</string>
+    <string name="ong_profile_text_view_organization_hint">Organização</string>
     <string name="ong_profile_edit_text_organization_name_hint">Nome da Organização</string>
-    <string name="ong_profile_edit_text_cnpj_hint">CNPJ</string>
-    <string name="ong_profile_edit_text_checkbox_does_not_have_cnpj">Não Tenho</string>
     <string name="ong_profile_edit_text_email_hint">E-mail</string>
     <string name="ong_profile_edit_text_phone_number_hint">Número de Telefone</string>
-    <string name="ong_profile_edit_text_address_hint">Endereço</string>
+    <string name="ong_profile_text_view_address_hint">Endereço</string>
     <string name="ong_profile_edit_text_cep_hint">CEP</string>
     <string name="ong_profile_edit_text_public_place_hint">Logradouro</string>
     <string name="ong_profile_edit_text_number_hint">Número</string>
     <string name="ong_profile_edit_text_complement_hint">Complemento</string>
     <string name="ong_profile_edit_text_district_hint">Bairro</string>
+    <string name="ong_profile_edit_text_city_hint">Cidade</string>
+    <string name="ong_profile_edit_text_state_hint">Estado</string>
     <string name="img_ong_wave_500_top">img_ong_wave_500_top</string>
     <string name="ong_profile_edit_text_sector_hint">Setor</string>
+    <string name="ong_profile_text_view_responsible_hint">Responsável</string>
+    <string name="ong_profile_text_view_safety_hint">Segurança</string>
+    <string name="ong_profile_edit_text_name_hint">Nome</string>
+    <string name="ong_profile_edit_text_cpf_hint">CPF</string>
+    <string name="ong_profile_edit_text_password_hint">Password</string>
+    <string name="ong_profile_edit_text_repeat_password_hint">Repeat Password</string>
+    <string name="ong_profile_text_view_accept_message_hint">
+Ao criar uma conta você concorda com os termos de uso e com a política de privacidade do Social Hub.</string>
 
 
 
