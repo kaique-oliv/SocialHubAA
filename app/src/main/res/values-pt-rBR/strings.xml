@@ -51,7 +51,7 @@
     <string name="ong_profile_edit_text_repeat_password_hint">Repeat Password</string>
     <string name="ong_profile_text_view_accept_message_hint">
 Ao criar uma conta você concorda com os termos de uso e com a política de privacidade do Social Hub.</string>
-
+    <string name="ong_profile_img_eye_password">Olho Password</string>
 
 
 </resources>

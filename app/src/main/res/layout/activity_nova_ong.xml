@@ -22,14 +22,15 @@
         android:id="@+id/scroll_ong_account_registration"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tv_opcao_usuario_title">
+        android:layout_below="@+id/tv_opcao_usuario_title"
+        android:layout_marginTop="3dp">
 
         <LinearLayout
             android:id="@+id/linear_layout_ong_account_registration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="16dp"
             android:orientation="vertical">
 
             <TextView
@@ -48,6 +49,8 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="text"
+                android:autofillHints="name"
                 android:hint="@string/ong_profile_edit_text_organization_name_hint" />
 
             <EditText
@@ -56,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="textEmailAddress"
                 android:hint="@string/ong_profile_edit_text_email_hint" />
 
 
@@ -65,6 +69,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="phone"
                 android:hint="@string/ong_profile_edit_text_phone_number_hint" />
 
             <EditText
@@ -73,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="text"
                 android:hint="@string/ong_profile_edit_text_sector_hint" />
 
             <TextView
@@ -91,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="number"
                 android:hint="@string/ong_profile_edit_text_cep_hint" />
 
             <EditText
@@ -99,6 +106,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="text"
                 android:hint="@string/ong_profile_edit_text_public_place_hint" />
 
             <EditText
@@ -107,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="number"
                 android:hint="@string/ong_profile_edit_text_number_hint" />
 
             <EditText
@@ -115,6 +124,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="text"
                 android:hint="@string/ong_profile_edit_text_complement_hint" />
 
             <EditText
@@ -123,6 +133,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="text"
                 android:hint="@string/ong_profile_edit_text_district_hint" />
 
             <EditText
@@ -131,6 +142,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="text"
                 android:hint="@string/ong_profile_edit_text_city_hint" />
 
             <EditText
@@ -139,6 +151,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="text"
                 android:hint="@string/ong_profile_edit_text_state_hint" />
 
             <TextView
@@ -157,6 +170,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="text"
                 android:hint="@string/ong_profile_edit_text_name_hint" />
 
             <EditText
@@ -165,7 +179,8 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
-                android:hint="@string/ong_profile_edit_text_cpf_hint" />
+                android:hint="@string/ong_profile_edit_text_cpf_hint"
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/register_edit_text_email_responsible"
@@ -173,6 +188,7 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:drawableTint="@color/ong_500"
+                android:inputType="textEmailAddress"
                 android:hint="@string/ong_profile_edit_text_email_hint" />
 
             <TextView
@@ -185,32 +201,70 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/register_edit_text_password"
+            <RelativeLayout
+                android:id="@+id/relative_layout_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
-                android:hint="@string/ong_profile_edit_text_password_hint" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/register_edit_text_repeat_password"
+                <ImageView
+                    android:id="@+id/imageView_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_alignEnd="@+id/register_edit_text_password"
+                    android:contentDescription="@string/ong_profile_img_eye_password"
+                    app:srcCompat="@drawable/ic_eye_24"
+                    />
+
+                <EditText
+                    android:id="@+id/register_edit_text_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/ong_500"
+                    android:inputType="textPassword"
+                    android:hint="@string/ong_profile_edit_text_password_hint" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_repeat_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
-                android:hint="@string/ong_profile_edit_text_repeat_password_hint" />
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/register_edit_text_repeat_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/ong_500"
+                    android:inputType="textPassword"
+                    android:hint="@string/ong_profile_edit_text_repeat_password_hint" />
+
+                <ImageView
+                    android:id="@+id/imageView_repeat_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:layout_alignEnd="@+id/register_edit_text_repeat_password"
+                    android:contentDescription="@string/ong_profile_img_eye_password"
+                    app:srcCompat="@drawable/ic_eye_24" />
+
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:textAlignment="center"
                 android:text="@string/ong_profile_text_view_accept_message_hint"
+                android:textAlignment="center"
                 android:textColor="@color/ong_500"
-                android:textSize="12sp"
-                />
+                android:textSize="12sp" />
 
             <Button
                 android:id="@+id/criar_conta_button"
@@ -221,8 +275,6 @@
                 android:paddingTop="16dp"
                 android:paddingBottom="16dp"
                 android:text="@string/login_criar_conta" />
-
-
 
 
         </LinearLayout>
