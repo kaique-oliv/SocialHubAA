@@ -53,6 +53,7 @@
     <string name="ong_profile_text_view_accept_message_hint">
 Ao criar uma conta você concorda com os termos de uso e com a política de privacidade do Social Hub.</string>
     <string name="ong_profile_img_eye_password">Olho Password</string>
+    <string name="ong_profile_msg_change_image">Alterar Imagem</string>
 
 
 </resources>

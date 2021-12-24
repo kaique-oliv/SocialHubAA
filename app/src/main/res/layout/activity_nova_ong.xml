@@ -1,284 +1,354 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.NovaOngActivity" >
+    android:orientation="vertical"
+    tools:context=".view.NovaOngActivity"
+    >
 
     <TextView
         android:id="@+id/tv_opcao_usuario_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:gravity="center"
         android:text="@string/perfil_ong_titulo"
         android:textColor="@color/ong_500"
         android:textSize="48sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:id="@+id/scroll_ong_account_registration"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tv_opcao_usuario_title"
-        android:layout_marginTop="3dp">
+        android:layout_width="377dp"
+        android:layout_height="517dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_opcao_usuario_title">
 
-        <LinearLayout
-            android:id="@+id/linear_layout_ong_account_registration"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout_into_scroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginEnd="16dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout_heder"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view_foto_perfil_ong"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius="50dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/image_view_foto_perfil_ong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="img_avatar_ong"
+                        android:scaleType="centerCrop"
+                        tools:srcCompat="@tools:sample/avatars[0]" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txt_view_change_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ong_profile_msg_change_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_view_foto_perfil_ong" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
+                android:id="@+id/txt_view_organization"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:text="@string/ong_profile_text_view_organization_hint"
                 android:textColor="@color/ong_500"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint_layout_heder" />
 
             <EditText
                 android:id="@+id/register_edit_text_organization_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
-                android:inputType="text"
-                android:autofillHints="name"
-                android:hint="@string/ong_profile_edit_text_organization_name_hint" />
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_organization_name_hint"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_view_organization" />
 
             <EditText
                 android:id="@+id/register_edit_text_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_email_hint"
                 android:inputType="textEmailAddress"
-                android:hint="@string/ong_profile_edit_text_email_hint" />
-
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_text_organization_name" />
 
             <EditText
                 android:id="@+id/register_edit_text_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_phone_number_hint"
                 android:inputType="phone"
-                android:hint="@string/ong_profile_edit_text_phone_number_hint" />
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_text_email" />
 
             <EditText
                 android:id="@+id/register_edit_text_sector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_sector_hint"
                 android:inputType="text"
-                android:hint="@string/ong_profile_edit_text_sector_hint" />
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_text_phone_number" />
 
             <TextView
+                android:id="@+id/txt_view_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:text="@string/ong_profile_text_view_address_hint"
                 android:textColor="@color/ong_500"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_text_sector" />
 
             <EditText
                 android:id="@+id/register_edit_text_cep"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_cep_hint"
                 android:inputType="number"
-                android:hint="@string/ong_profile_edit_text_cep_hint" />
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_view_address" />
 
             <EditText
                 android:id="@+id/register_edit_text_public_place"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_public_place_hint"
                 android:inputType="text"
-                android:hint="@string/ong_profile_edit_text_public_place_hint" />
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_text_cep" />
 
             <EditText
                 android:id="@+id/register_edit_text_number"
-                android:layout_width="match_parent"
+                android:layout_width="139dp"
                 android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_number_hint"
                 android:inputType="number"
-                android:hint="@string/ong_profile_edit_text_number_hint" />
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/register_edit_text_public_place"
+                app:layout_constraintTop_toTopOf="@+id/register_edit_text_public_place" />
 
             <EditText
                 android:id="@+id/register_edit_complement"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:layout_width="144dp"
+                android:layout_height="49dp"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_complement_hint"
                 android:inputType="text"
-                android:hint="@string/ong_profile_edit_text_complement_hint" />
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_text_public_place" />
 
             <EditText
                 android:id="@+id/register_edit_text_district"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:layout_width="203dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_district_hint"
                 android:inputType="text"
-                android:hint="@string/ong_profile_edit_text_district_hint" />
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/register_edit_complement"
+                app:layout_constraintTop_toTopOf="@+id/register_edit_complement" />
 
             <EditText
                 android:id="@+id/register_edit_text_city"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:layout_width="211dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_city_hint"
                 android:inputType="text"
-                android:hint="@string/ong_profile_edit_text_city_hint" />
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_complement" />
 
             <EditText
                 android:id="@+id/register_edit_text_state"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:layout_width="139dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_state_hint"
                 android:inputType="text"
-                android:hint="@string/ong_profile_edit_text_state_hint" />
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/register_edit_text_city"
+                app:layout_constraintTop_toTopOf="@+id/register_edit_text_city" />
 
             <TextView
+                android:id="@+id/txt_view_responsible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:text="@string/ong_profile_text_view_responsible_hint"
                 android:textColor="@color/ong_500"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_text_city" />
 
             <EditText
                 android:id="@+id/register_edit_text_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_name_hint"
                 android:inputType="text"
-                android:hint="@string/ong_profile_edit_text_name_hint" />
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_view_responsible"/>
 
             <EditText
                 android:id="@+id/register_edit_text_cpf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
+                android:ems="10"
                 android:hint="@string/ong_profile_edit_text_cpf_hint"
-                android:inputType="number" />
+                android:inputType="number"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_text_name"/>
 
             <EditText
                 android:id="@+id/register_edit_text_email_responsible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawablePadding="16dp"
-                android:drawableTint="@color/ong_500"
-                android:inputType="textEmailAddress"
-                android:hint="@string/ong_profile_edit_text_email_hint" />
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_email_hint"
+                android:inputType="text"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_text_cpf"/>
 
             <TextView
+                android:id="@+id/txt_view_safety"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:text="@string/ong_profile_text_view_safety_hint"
                 android:textColor="@color/ong_500"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/register_edit_text_email_responsible" />
 
-            <RelativeLayout
-                android:id="@+id/relative_layout_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/login_edit_text_password"
+                android:layout_width="266dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_password_hint"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_view_safety" />
 
-                <EditText
-                    android:id="@+id/login_edit_text_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginBottom="0dp"
-                    android:drawablePadding="16dp"
-                    android:drawableTint="@color/ong_500"
-                    android:hint="@string/ong_profile_edit_text_password_hint"
-                    android:inputType="textPassword" />
+            <ImageButton
+                android:id="@+id/img_eye_show_new_password"
+                android:layout_width="75dp"
+                android:layout_height="48dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="@string/ong_profile_img_eye_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/login_edit_text_password"
+                app:srcCompat="@drawable/ic_eye_24" />
 
-                <ImageButton
-                    android:id="@+id/img_eye_show_new_password"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentTop="true"
-                    android:background="#00FFFFFF"
-                    android:layout_alignEnd="@+id/login_edit_text_password"
-                    app:srcCompat="@drawable/ic_eye_24"
-                    />
+            <EditText
+                android:id="@+id/login_edit_text_password_confirm"
+                android:layout_width="266dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:hint="@string/ong_profile_edit_text_repeat_password_hint"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_edit_text_password" />
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relative_layout_repeat_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/login_edit_text_password_confirm"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="16dp"
-                    android:drawableTint="@color/ong_500"
-                    android:hint="@string/ong_profile_edit_text_repeat_password_hint"
-                    android:inputType="textPassword" />
-
-                <ImageButton
-                    android:id="@+id/img_eye_show_confirm_password"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentTop="true"
-                    android:background="#00FFFFFF"
-                    android:layout_alignEnd="@+id/login_edit_text_password_confirm"
-                    app:srcCompat="@drawable/ic_eye_24" />
-
-            </RelativeLayout>
+            <ImageButton
+                android:id="@+id/img_eye_show_confirm_password"
+                android:layout_width="75dp"
+                android:layout_height="48dp"
+                android:background="#00FFFFFF"
+                android:contentDescription="@string/ong_profile_img_eye_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/login_edit_text_password_confirm"
+                app:srcCompat="@drawable/ic_eye_24" />
 
             <TextView
+                android:id="@+id/txt_view_msg_accept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
                 android:text="@string/ong_profile_text_view_accept_message_hint"
-                android:textAlignment="center"
                 android:textColor="@color/ong_500"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/login_edit_text_password_confirm" />
+
 
             <Button
                 android:id="@+id/criar_conta_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/ong_500"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:text="@string/login_criar_conta" />
+                android:text="@string/login_criar_conta"
+                app:layout_constraintEnd_toEndOf="parent"
 
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_view_msg_accept" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
