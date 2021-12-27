@@ -39,7 +39,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraint_layout_heder"
+                android:id="@+id/constraint_layout_header"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:layout_marginTop="15dp"
@@ -70,11 +70,11 @@
 
                 <Button
                     android:id="@+id/button"
-                    android:layout_width="56dp"
-                    android:layout_height="48dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginStart="80dp"
                     android:layout_marginBottom="-20dp"
-                    android:background="@drawable/ic_camera_24"
+                    android:background="@drawable/ic_baseline_add_a_photo_24"
                     android:contentDescription="@string/ong_profile_msg_change_image"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -93,7 +93,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraint_layout_heder" />
+                app:layout_constraintTop_toBottomOf="@+id/constraint_layout_header" />
 
             <EditText
                 android:id="@+id/register_edit_text_organization_name"
@@ -103,6 +103,8 @@
                 android:hint="@string/ong_profile_edit_text_organization_name_hint"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
+                android:drawableStart="@drawable/ic_baseline_group_24"
+                android:drawableTint="@color/ong_500"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_view_organization" />
 
@@ -127,6 +129,8 @@
                 android:hint="@string/ong_profile_edit_text_phone_number_hint"
                 android:inputType="phone"
                 android:minHeight="48dp"
+                android:drawableStart="@drawable/ic_baseline_call_24"
+                android:drawableTint="@color/ong_500"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/register_edit_text_email" />
 
@@ -256,6 +260,8 @@
                 android:hint="@string/ong_profile_edit_text_name_hint"
                 android:inputType="text"
                 android:minHeight="48dp"
+                android:drawableStart="@drawable/person_24"
+                android:drawableTint="@color/ong_500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_view_responsible"/>
