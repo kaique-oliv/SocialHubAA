@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.example.socialhub.R
 import com.example.socialhub.databinding.ActivityNovoUsuarioBinding
+import com.example.socialhub.helpers.AppConstants
+import com.example.socialhub.model.Usuario
 import com.example.socialhub.view.MainActivity
 import com.example.socialhub.view.NovoUsuarioActivity
 import com.google.android.gms.tasks.OnFailureListener
@@ -17,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 
 
@@ -67,25 +70,35 @@ class NovoUsuarioViewModel: ViewModel() {
 
     private fun criarConta()
     {
+        val usuario = Usuario (
+            foto = AppConstants.DEFALT_AVATAR
+        )
+
         if (validar()) {
-            val email = binding.loginEditTextEmail.text.toString().lowercase(Locale.getDefault())
+            usuario.email = binding.loginEditTextEmail.text.toString().lowercase(Locale.getDefault())
             val senha = binding.loginEditTextPasswordConfirm.text.toString().lowercase(Locale.getDefault())
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha)
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(usuario.email, senha)
                 .addOnSuccessListener(OnSuccessListener{
-                    Log.i("social-hub", it.user!!.email.toString())
+
+                    usuario.uid = it.user!!.uid
 
                     val lembrar = binding.loginCheckBoxLembrar.isChecked
 
-                    //Abrir arquivo para gravar dados
-                    //Se arquivo não existe ele criar...
+                    //Abrir arquivo para gravar dados, se arquivo não existe ele cria...
                     val dados = rootActivity.getSharedPreferences("usuario", Context.MODE_PRIVATE)
 
-                    //Para alerar conteudo do arquivo
+                    //Para alterar conteudo do arquivo
                     val editor = dados.edit()
-                    editor.putString("email", email)
+                    editor.putString("email", usuario.email)
                     editor.putString("senha", senha)
                     editor.putBoolean("lembrar", lembrar)
                     editor.apply()
+
+                    //Grava no FireBase
+                    FirebaseFirestore
+                        .getInstance()
+                        .collection("usuarios")
+                        .add(usuario)
 
                     val intent = Intent(rootActivity, MainActivity::class.java)
                     rootActivity.startActivity(intent)

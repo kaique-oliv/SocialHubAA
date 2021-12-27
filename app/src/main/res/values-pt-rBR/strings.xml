@@ -28,6 +28,13 @@
     <string name="criar_usuario_email_incorreto">E-mail incorreto</string>
     <string name="autenticar_usuario_nao_existe">Usuário não existe</string>
 
+    <string name="ong_profile_falta_organization">Nome da organização deve ser informada</string>
+    <string name="ong_profile_falta_fone">Fone deve ser informado</string>
+    <string name="ong_profile_falta_cep">CEP deve ser informado</string>
+    <string name="ong_profile_falta_responsible_name">Nome do responsável deve ser informado</string>
+    <string name="ong_profile_falta_responsible_cpf">CPF do responsável deve ser informado</string>
+    <string name="ong_profile_falta_responsible_email">E-mail do responsável deve ser informado</string>
+
     <!-- Texto da tela de cadastro ong -->
     <string name="ong_profile_text_view_organization_hint">Organização</string>
     <string name="ong_profile_edit_text_organization_name_hint">Nome da Organização</string>
