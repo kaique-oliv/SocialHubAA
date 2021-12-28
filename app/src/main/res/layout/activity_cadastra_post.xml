@@ -3,34 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="373dp"
-        android:layout_height="269dp"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="30dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    >
 
     <Button
         android:id="@+id/Postar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="end"
         android:text="Post"
-        tools:layout_editor_absoluteX="300dp"
-        tools:layout_editor_absoluteY="671dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="371dp"
-        android:layout_height="61dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        tools:layout_editor_absoluteY="336dp">
+    <ImageView
+        android:id="@+id/iv_post"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:foregroundGravity="center"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="hint" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:id="@+id/tv_post_Descricao"
+        app:layout_constraintTop_toBottomOf="@+id/iv_post" />
+
+    <TextView
+        android:id="@+id/tv_meta_descricao"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_meta"
+        app:layout_constraintEnd_toStartOf="@+id/tv_meta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_meta" />
+
+    <TextView
+        android:id="@+id/tv_meta"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/Postar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_post_Descricao" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
