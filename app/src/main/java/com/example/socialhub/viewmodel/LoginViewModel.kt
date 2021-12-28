@@ -2,26 +2,36 @@ package com.example.socialhub.viewmodel
 
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.provider.Settings.Global.getString
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.lifecycle.ViewModel
 import com.example.socialhub.R
 import com.example.socialhub.databinding.ActivityLoginBinding
 import com.example.socialhub.view.LoginActivity
 import com.example.socialhub.view.MainActivity
 import com.example.socialhub.view.NovoUsuarioOpcaoContaActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.internal.api.FirebaseNoSignedInUserException
 import java.util.*
+import com.firebase.ui.auth.AuthUI
 
 class LoginViewModel: ViewModel() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var rootActivity: LoginActivity
+    private val providers = arrayListOf(
+        AuthUI.IdpConfig.GoogleBuilder().build(),
+        )
+    private var REQUEST_CODE =1001
     private var passwordIsVisible: Boolean = false
     private var email: String = "";
     private var senha: String = "";
@@ -31,7 +41,7 @@ class LoginViewModel: ViewModel() {
         viewBinding.also { binding = it };
         activity.also { rootActivity = it };
 
-        //Abrir arquivo para gravar dados, ee arquivo não existe ele cria...
+        //Abrir arquivo para gravar dados, e arquivo não existe ele cria...
         val arquivo = rootActivity.getSharedPreferences("usuario", MODE_PRIVATE)
 
         verificaAutenticado();
@@ -52,6 +62,15 @@ class LoginViewModel: ViewModel() {
                 passwordIsVisible = false
             }
         }
+        //login no google
+        binding.btnSignInGoogle.setOnClickListener {
+            startActivityForResult (rootActivity,
+                AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build(),
+                REQUEST_CODE, null
+            )
+        }
+
+
 
         binding.loginTextViewCriarConta.setOnClickListener {
             val intent = Intent(rootActivity, NovoUsuarioOpcaoContaActivity::class.java)
@@ -135,6 +154,7 @@ class LoginViewModel: ViewModel() {
 
     private fun verificaAutenticado(){
         if (lembrar) {
+
             val usuarioAutenticado = FirebaseAuth.getInstance().currentUser
 
             if (usuarioAutenticado != null) {

@@ -27,6 +27,7 @@ class NovoUsuarioViewModel: ViewModel() {
 
     private lateinit var binding: ActivityNovoUsuarioBinding
     private lateinit var rootActivity: NovoUsuarioActivity
+
     private var newPasswordIsVisible: Boolean = false
     private var confirPasswordIsVisible: Boolean = false
 

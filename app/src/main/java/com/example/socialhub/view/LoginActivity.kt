@@ -35,4 +35,6 @@ class LoginActivity : AppCompatActivity(), LifecycleOwner {
         viewModel.addBinding(binding, this)
 
     }
+
+
 }
