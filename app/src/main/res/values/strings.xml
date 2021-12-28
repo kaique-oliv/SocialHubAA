@@ -65,4 +65,6 @@ By creating an account you agree to Social Hub\'s terms of use and privacy polic
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <!-- tela de post-->
     <string name="i_will_help">I wil help!</string>
+    <string name="home">Home</string>
+    <string name="feed">Feed</string>
 </resources>

@@ -64,5 +64,7 @@ Ao criar uma conta você concorda com os termos de uso e com a política de priv
 
     <!-- tela de post-->
     <string name="i_will_help">Vou ajudar!</string>
+    <string name="home">Home</string>
+    <string name="feed">Feed</string>
 
 </resources>
