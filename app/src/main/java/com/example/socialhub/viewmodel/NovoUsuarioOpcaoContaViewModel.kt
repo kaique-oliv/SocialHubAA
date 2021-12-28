@@ -25,6 +25,7 @@ class NovoUsuarioOpcaoContaViewModel: ViewModel() {
                 rootActivity,
                 NovaOngActivity::class.java
             )
+            intent.putExtra("TipoUsuario", "Org")
             with(rootActivity) {
                 startActivity(intent)
             }
@@ -34,6 +35,8 @@ class NovoUsuarioOpcaoContaViewModel: ViewModel() {
                 rootActivity,
                 NovoUsuarioActivity::class.java
             )
+            intent.putExtra("TipoUsuario", "Usuario")
+
             with(rootActivity) {
                 startActivity(intent)
             }
