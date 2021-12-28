@@ -3,13 +3,15 @@
     <item
         android:id='@+id/navigation_feed'
         android:icon="@drawable/ic_baseline_receipt_long_24"
-        android:title="Feed" />
+        android:title="@string/feed" />
+    <item
+        android:id='@+id/navigation_add'
+        android:icon='@drawable/ic_add_circle'
+        android:title='+'
+        />
     <item
         android:id='@+id/navigation_profile'
         android:icon="@drawable/ic_account_circle_24"
-        android:title="Profile" />
-<!--    <item-->
-<!--        android:id='@+id/navigation_store'-->
-<!--        android:icon='@drawable/ic_launcher_foreground'-->
-<!--        android:title='Android Store'/>-->
+        android:title="@string/home" />
+
 </menu>

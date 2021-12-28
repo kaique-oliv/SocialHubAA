@@ -23,7 +23,6 @@ class MainViewModel: ViewModel() {
     fun addBinding(viewBinding: ActivityMainBinding, activity: MainActivity){
         viewBinding.also { binding = it };
         activity.also { rootActivity = it };
-        //replaceFragment(FeedFragment())
         setListeners();
     }
 
