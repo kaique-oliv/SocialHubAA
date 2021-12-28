@@ -9,7 +9,7 @@ class RetrofitFactory() {
     companion object {
 
         private lateinit var retrofit: Retrofit
-        private val baseUrl ="https://viacep.com.br/ws/"
+        private const val baseUrl ="https://viacep.com.br/ws/"
 
         fun getRetrofit() : Retrofit {
 
