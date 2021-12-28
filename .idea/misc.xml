@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/adriana.c.dos.santos/SocialHubAA/app/src/main/res/layout/activity_cadastra_post.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/adriana.c.dos.santos/SocialHubAA/app/src/main/res/layout/activity_login.xml" value="0.10190217391304347" />
+        <entry key="..\:/Users/adriana.c.dos.santos/SocialHubAA/app/src/main/res/layout/activity_main.xml" value="0.30973451327433627" />
+        <entry key="..\:/Users/adriana.c.dos.santos/SocialHubAA/app/src/main/res/layout/activity_nova_ong.xml" value="0.10190217391304347" />
+        <entry key="..\:/Users/adriana.c.dos.santos/SocialHubAA/app/src/main/res/layout/activity_novo_usuario.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/adriana.c.dos.santos/SocialHubAA/app/src/main/res/layout/activity_novo_usuario_opcao_conta.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/adriana.c.dos.santos/SocialHubAA/app/src/main/res/layout/activity_start.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/adriana.c.dos.santos/SocialHubAA/app/src/main/res/layout/fragment_feed.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/adriana.c.dos.santos/SocialHubAA/app/src/main/res/layout/fragment_profile.xml" value="0.12760416666666666" />
+        <entry key="..\:/Users/adriana.c.dos.santos/SocialHubAA/app/src/main/res/layout/item_feed_postagem.xml" value="0.1" />
         <entry key="..\:/Users/kaique.de.oliveira/AndroidStudioProjects/SocialHub/app/src/main/res/drawable/ic_baseline_add_a_photo_24.xml" value="0.3828125" />
         <entry key="..\:/Users/kaique.de.oliveira/AndroidStudioProjects/SocialHub/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/kaique.de.oliveira/AndroidStudioProjects/SocialHub/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
