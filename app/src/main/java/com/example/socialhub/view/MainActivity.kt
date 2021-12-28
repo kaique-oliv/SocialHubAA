@@ -9,6 +9,7 @@ import com.example.socialhub.R
 import com.example.socialhub.databinding.ActivityLoginBinding
 import com.example.socialhub.databinding.ActivityMainBinding
 import com.example.socialhub.fragments.FeedFragment
+import com.example.socialhub.fragments.PostarFragment
 import com.example.socialhub.fragments.ProfileFragment
 import com.example.socialhub.viewmodel.LoginViewModel
 import com.example.socialhub.viewmodel.MainViewModel
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
 
     private val feedFragment = FeedFragment()
     private val profileFragment = ProfileFragment()
+    private val postarFragment = PostarFragment()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity(), LifecycleOwner {
             when(it.itemId){
                 R.id.navigation_profile -> replaceFragment(profileFragment)
                 R.id.navigation_feed -> replaceFragment(feedFragment)
+                R.id.navigation_add -> replaceFragment(postarFragment)
             }
             true
         }

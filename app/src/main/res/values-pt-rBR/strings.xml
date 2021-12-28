@@ -66,5 +66,7 @@ Ao criar uma conta você concorda com os termos de uso e com a política de priv
     <string name="i_will_help">Vou ajudar!</string>
     <string name="home">Home</string>
     <string name="feed">Feed</string>
+    <string name="describe_the_goal">Descreva a meta</string>
+    <string name="describe_the_help">Descreva a ajuda</string>
 
 </resources>

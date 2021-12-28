@@ -67,4 +67,6 @@ By creating an account you agree to Social Hub\'s terms of use and privacy polic
     <string name="i_will_help">I wil help!</string>
     <string name="home">Home</string>
     <string name="feed">Feed</string>
+    <string name="describe_the_goal">Describe the goal</string>
+    <string name="describe_the_help">Describe the help</string>
 </resources>

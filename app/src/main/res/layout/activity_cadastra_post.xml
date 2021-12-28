@@ -7,15 +7,6 @@
     android:layout_margin="20dp"
     >
 
-    <Button
-        android:id="@+id/Postar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:text="Post"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <ImageView
         android:id="@+id/iv_post"
         android:layout_width="wrap_content"
@@ -25,29 +16,66 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:id="@+id/tv_post_Descricao"
-        app:layout_constraintTop_toBottomOf="@+id/iv_post" />
+        android:hint="@string/describe_the_help"
+        android:textAlignment="textStart"
+        app:layout_constraintTop_toBottomOf="@+id/iv_post"
+        android:background="@drawable/shape_rectangle_with_border"
+        android:padding="5dp"
+        android:textSize="18dp"
+
+        />
 
     <TextView
         android:id="@+id/tv_meta_descricao"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintHorizontal_weight="8"
         app:layout_constraintBottom_toBottomOf="@+id/tv_meta"
         app:layout_constraintEnd_toStartOf="@+id/tv_meta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_meta" />
+        app:layout_constraintTop_toTopOf="@+id/tv_meta"
+        android:background="@drawable/shape_rectangle_with_border"
+        android:textSize="30sp"
+        android:textAlignment="textStart"
+        android:padding="5dp"
+        android:textColor="@color/people_700"
+        android:hint="@string/describe_the_goal"
+        />
 
     <TextView
         android:id="@+id/tv_meta"
-        android:layout_width="80dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/Postar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_Postar"
+        app:layout_constraintStart_toEndOf="@id/tv_meta_descricao"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_post_Descricao" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_post_Descricao"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:textColor="@color/people_700"
+        android:background="@drawable/shape_rectangle_with_border"
+        android:hint="10"
+        />
+
+    <Button
+        android:id="@+id/btn_Postar"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:gravity="end"
+        android:padding="5dp"
+        android:text="Postar"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_meta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
